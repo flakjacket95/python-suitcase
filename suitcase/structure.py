@@ -58,6 +58,7 @@ class Packer(object):
                 stream.seek(offset)
                 checksum_data = field.packed_checksum(data)
                 stream.write(checksum_data)
+                data = stream.getvalue()
 
     def unpack(self, data, trailing=False):
         stream = BytesIO(data)
