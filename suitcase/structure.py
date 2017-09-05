@@ -56,7 +56,7 @@ class Packer(object):
             data = stream.getvalue()
             for field, offset in crc_fields:
                 stream.seek(offset)
-                checksum_data = self.crc_field.packed_checksum(data)
+                checksum_data = field.packed_checksum(data)
                 stream.write(checksum_data)
 
     def unpack(self, data, trailing=False):
