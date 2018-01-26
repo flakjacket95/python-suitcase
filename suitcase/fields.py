@@ -461,7 +461,7 @@ class LengthField(BaseField):
         return self.length_field.getval()
 
     def setval(self, value):
-        self.length_field.setval(value)
+        raise SuitcaseProgrammingError("Cannot set the value of a LengthField")
 
     def associate_length_consumer(self, target_field):
         def _length_value_provider():
